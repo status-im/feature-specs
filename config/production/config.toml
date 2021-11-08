@@ -1,0 +1,2 @@
+baseurl = "https://status-im.github.io/feature-specs/"
+canonifyURLs = true

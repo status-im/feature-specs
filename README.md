@@ -1,2 +1,4 @@
-# feature-specs
-repo for feature specs &amp; feature requests
+```bash
+npm install
+hugo server
+```
