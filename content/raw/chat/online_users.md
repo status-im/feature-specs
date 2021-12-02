@@ -1,6 +1,6 @@
 ---
 title: "Online Users spec"
-version: "1.0.0"
+version: "2.0.0"
 description: ""
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00
@@ -26,19 +26,26 @@ It's important for end users to know which community members are online or offli
 
 ## Use Cases
 
-### Setting state as online
+### Setting state as always online
 
-1. User selects state as `online`
+1. User selects state as `always online`
 2. System updates indicator to indicate online state (e.g a green circle)
 3. System indicates user is online in the member list of each community the user is a part of
-4. Other users see this user as online in the member list of each community the user is part of
+4. Other users see this user as online in the member list of each community the user is part of, as long as the last ping was less than 2 weeks ago
 
-### Setting state as offline
+### Setting state as inactive
 
-1. User selects state as `offline`
+1. User selects state as `inactive`
 2. System updates indicator to indicate offline state (e.g a grey circle)
 3. System indicates user is offline in the member list of each community the user is a part of
-4. Other users see this user as offline in the member list of each community the user is part of, within a period of up to 5 minutes
+4. Other users see this user as offline in the member list of each community the user is part of
+
+### Setting state as automatic
+
+1. User selects state as `set status automatically`
+2. System updates indicator to indicate online state (e.g a green circle)
+3. System indicates user is online in the member list of each community the user is a part of
+4. Other users see this user as online in the member list of each community the user is part of, as long as the last ping was less than 5 minutes ago
 
 ## Functional Rrequirements
 
@@ -61,10 +68,13 @@ preconditions:
 
 **Status Selector**
 
-- The user MUST be able to select his state as 'online' or 'offline'
-- If the user has 'online' as selected, then they MUST be shown online in the communities member list.
-- If the user has 'offline' as selected, then they MUST be shown offline for everyone within 5 minutes regardless of activity, even if the user sends new messages.
+- The user MUST be able to select his state as 'always online' or 'inactive' or 'set status automatically'
+- If the user has 'always online' as selected, then they MUST be shown online in the communities member list.
+- If the user has 'inactive' as selected, then they MUST be shown offline for everyone within 5 minutes regardless of activity, even if the user sends new messages.
+- If the user has selected `Set status automatically`, then they MUST be shown online in the communities member list.
 
 ## Notes
 
 - under the hood: a user that has the online state sends a ping to a special community channel, if the user selects offline state, then they stop sending this ping, and it's assumed by other clients the user went offline if they don't receive another ping within 5 minutes.
+- under the hood: when a user selects 'invisible'/'idle' state, then a cancelling ping is sent to the special channel, which is used to indicate that the user is now considered offline.
+- The reasoning to make the 'Always online' status 2 weeks and not simply forever is that waku mailservers only guarantee message persistence for 30 days.  So if Alice sets their state as 'Always online' and then doesn't open Status for 31 days, and Bob then joins a community that Alice is a member of 31 days after Alice was last online then Bob will see Alice as 'Inactive' but all the members of that same community who joined prior to Alice being offline for 31 days will see Alice as 'Online'. We don't want different users to see different things depending on some invisible arbitrary criteria.
