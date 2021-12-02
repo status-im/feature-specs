@@ -17,6 +17,7 @@ toc: true
 ## Designs
 
 - [designs](https://www.figma.com/file/Mr3rqxxgKJ2zMQ06UAKiWL/%F0%9F%92%AC-Chat%E2%8E%9CDesktop?node-id=5358%3A5666)
+- [updated designs](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=1466%3A343105)
 
 ## Use Cases
 
@@ -26,7 +27,7 @@ TODO
 
 ### General
 
-* The Activity Center MUST support filtering by 4 categories: "All", "Mentions", "Replies", "Contact Requests"
+* The Activity Center MUST support filtering by 5 categories: "All", "Mentions", "Replies", "Contact Requests", "Identity Checks"
 * The Activity Center MAY contain the following type of items:
     * contact request
     * mention in a community
@@ -34,6 +35,7 @@ TODO
     * mention in a group
     * mentions in a 1:1
     * reply to a message from the user
+    * identity check request
 * Clicking the "Mark all as read" MUST mark all activity items read of the selected category
 * The activity items MUST be grouped by day sections and sorted by most recent
 * The day sections and their items MUST displayed according to the following criteria
@@ -67,3 +69,7 @@ TODO
 * If the user receives a reply to a message they have posted then the reply MUST appear in the "All" and "Replies" sections.
 * The user MUST be able to mark this type of item as read
 * Clicking on this type of activity item MUST open that chat and jump to that message
+
+## Notes
+
+* At time of writing the "Identity Checks" section is new and has not been implemented yet
