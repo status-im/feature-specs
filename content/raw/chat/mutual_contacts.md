@@ -23,6 +23,7 @@ To prevent unsolicited messages & invitations and some forms of spam, Users must
 * [designs](https://www.figma.com/file/Mr3rqxxgKJ2zMQ06UAKiWL/%F0%9F%92%AC-Chat%E2%8E%9CDesktop?node-id=5224%3A0)
 * [Sending contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=725%3A329626)
 * [Receiving contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=1637%3A369041)
+* [Pending contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=128%3A28247)
 
 ## Use Cases
 
@@ -32,6 +33,7 @@ To prevent unsolicited messages & invitations and some forms of spam, Users must
 2. User fills reason for contact request e.g "Say who you are / why you want to become a contact.."
 3. User sends contact request
 4. System notifies user `Contact Request Send`
+5. System opens A 1 on 1 chat with that user, it displays that a contact request to that user is pending. The user cannot send messages on the 1 on 1 while the request is pending.
 
 ### Receiving Contact Request
 
