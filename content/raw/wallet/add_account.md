@@ -36,6 +36,15 @@ Users often want to add an account to their wallet and this is a very common use
 
 ### Generate an account
 
+**TODO** design is missing
+
+1. User selects "Generate an account"
+2. System shows dialog to enter account name and emoji
+3. System randomly selects an emoji
+4. User fills in account name
+5. (optional): User selects emoji
+6. User selects "Add account"
+
 ### Import an account from a private key
 
 1. User selects "Add with a key or seed phrase"
@@ -56,10 +65,22 @@ Users often want to add an account to their wallet and this is a very common use
 4. User enters seed phrase
 5.1 alternative: user fills private key, see "Import an account from a private key"
 5. System searches for "active accounts"
-6. System displays list of known activate accounts
+6. System displays list of known active accounts
 6.1 alternative: System displays "We found no active accounts with that seed phrase"
 6.1.1 System offers option to generate an account, see "Generate an account
-6.1.1 System offers option to proceed with seed phrase
+6.1.1 System offers option to proceed with seed phrase, see "Import an account from a seed phrase: no active accounts found or new derivation path"
+7. (optional) User deletes one or more "active account"
+8. User fills names of active accounts
+9. (optional) User changes emoji of an active account
+10 User selects "Add accounts"
+10.1 alternative: user selects: "Add new derivation path", see "Import an account from a seed phrase: no active accounts found or new derivation path"
+
+#### Import an account from a seed phrase: no active accounts found or new derivation path
+
+1. System displays a list of derivation paths
+2. User selects one of the derivation paths
+2.1 alternative: User types derivation path
+3. **TODO** design is missing next steps
 
 ## Functional Requirements
 
@@ -90,6 +111,11 @@ Users often want to add an account to their wallet and this is a very common use
    - Ethereum Classic
    - Ropsten Testnet
    - Ledger
+
+- an "active account" MUST display the name of the derivation path, the address
+- an "active account" MUST have the same properties as an account such as name and, emoji
+- an "active account" emoji default MAY be randomly selected
+- A user MAY delete an "active account"
 
 ## Notes
 
