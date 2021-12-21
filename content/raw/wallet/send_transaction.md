@@ -1,7 +1,7 @@
 ---
 title: "Send Transaction spec"
 description: ""
-version: "1.0.0"
+version: "2.0.0"
 date: 2020-12-08T08:48:57+00:00
 lastmod: 2020-12-08T08:48:57+00:00
 draft: false
@@ -24,6 +24,8 @@ One of the most common use cases for a wallet is to send tokens to another accou
 ## Designs
 
 - [send](https://www.figma.com/file/FkFClTCYKf83RJWoifWgoX/Wallet-v2?node-id=350%3A83031)
+- [swap](https://www.figma.com/file/FkFClTCYKf83RJWoifWgoX/Wallet-v2?node-id=350%3A92081)
+- [swap & send](https://www.figma.com/file/FkFClTCYKf83RJWoifWgoX/Wallet-v2?node-id=29%3A12317)
 
 ## Use Cases
 
@@ -52,7 +54,7 @@ prerequesites: User is in the wallet with an account selected
 
 ### general
 
-- The Send Transaction functionality MUST support the following use case "Send"
+- The Send Transaction functionality MUST support the following use cases "Swap", "Swap & Send", "Send"
 
 ### Send
 
@@ -91,7 +93,31 @@ prerequesites: User is in the wallet with an account selected
 - The priorities supported MUST be: low, optimal, high, custom
 - If the origin address does not have enough ether to pay for the choosen amount of gas an error MUST be shown
 
-## Notes
+### Swap
 
-- Swap, and Swap & Send are to be covered in version 2.0 of this spec
+**Asset & Amount**
+- The Assets & Amount section MUST display two fields, the origin token selector and destination token selector
+- Each token selector MUST have a token selected by default (e.g USDC)
+- The total balance across networks for the selected token in the origin token selector MUST be displayed
+- Changing the selected origin token MUST update the displayed total balance
+- Inputing or changing a token amount in the origin token field MUST change the amount in the destination token field to reflect the amount
+- Inputing or changing a token amount in the destination token field MUST change the amount in the origin token field to reflect the amount
+- A user MUST be able to reverse the origin and destination token selectors
+- The fiat amount equivalent to the amount in the destination token field MUST be displayed
+- The token selector MUST display the tokens enabled for that account
+- Each token in the token selector MUST display the token logo, name, balance, and the balance in the prefered fiat currency
+- The tokens in the token selector MUST be ordered by their fiat value
+- The user MUST be able search for a token by name or symbol in the token selector
+- The user MAY input a token address in the token selector to use that token
+
+**Priority & Gas**
+- After inputing values for the origin and destination tokens the user MUST be able to choose a priority for the transaction
+- The priorities supported MUST be: low, optimal, high, custom
+- If the origin address does not have enough ether to pay for the choosen amount of gas an error MUST be shown
+
+### Swap & Send
+
+**TODO**
+
+## Notes
 
