@@ -22,7 +22,6 @@ Users often use keyboard shortcuts to more effectively navigate applications. Th
 ## Designs
 
 * [shortcut list modal](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=2457%3A357870)
-* [focused state](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop)
 
 ## Functional Requirements
 
@@ -46,32 +45,9 @@ The requirements will use the keys `CMD` and `OPT` which are defined for each pl
 
 ### Keyboard shortcuts
 
-#### Message focus
-
-- `TAB` - MUST trigger focus of the last message
-- `UP` - MUST focus on the previous message
-    - requirement: there is already a message in focus
-- `DOWN` - MUST focus on the next message
-    - requirement: there is already a message in focus
 - `ESCAPE`:
-    - if a message is already in focus, it MUST be removed from focus and the input box MUST be focused instead
     - if input box is already in focus then focus MUST BE removed completely
     - if there is nothing in focus then the input box MUST be focused
-
-#### Message selection shortcuts
-
-requirement: there is already a message in focus
-
-- `E` MUST edit the currently focused message
-    - requirement: the message must have been sent by the current user
-- `Backspace` MUST delete the currently focused message
-    - requirement: the message must have been sent by the current user
-- `P` pins the currently focused message
-    - requirement: the current user must be an admin in a community or a group chat
-- `+` react to currently focused message
-- `R` - reply to currently focused message
-- `CMD + C` - copy currently focused message
-- `OPT + ENTER` - mark currently focused message as read
 
 #### Navigation shortcuts
 
@@ -95,7 +71,6 @@ requirement: a community must be selected
 - `CMD + i` - MUST toogle inbox popout
 - `CMD + SHIFT + E` - MUST mark top inbox channel as read
 - `CMD + U` - MUST toggle channel member list
-
 
 #### Chat shortcuts
 
