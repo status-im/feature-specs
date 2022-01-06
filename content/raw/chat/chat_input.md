@@ -20,6 +20,11 @@ toc: true
 * mentions (todo: add link)
 * emojis (todo: add link)
 * code tags (todo: add link)
+* [Maximum character reached UI](https://www.figma.com/file/MtAO3a7HnEH5xjCDVNilS7/%F0%9F%8E%A8-Design-System-%E2%8E%9C-Desktop?node-id=865%3A3428)
+* [Chat input max hight](https://www.figma.com/file/MtAO3a7HnEH5xjCDVNilS7/%F0%9F%8E%A8-Design-System-%E2%8E%9C-Desktop?node-id=865%3A3237)
+* [Composing an audio message](https://www.figma.com/file/Mr3rqxxgKJ2zMQ06UAKiWL/%F0%9F%92%AC-Chat%E2%8E%9CDesktop?node-id=8135%3A48835)
+* [Audio message prototype](https://www.figma.com/proto/Mr3rqxxgKJ2zMQ06UAKiWL/%F0%9F%92%AC-Chat%E2%8E%9CDesktop?page-id=8135%3A48747&node-id=8150%3A186621&viewport=365%2C48%2C0.33&scaling=min-zoom&starting-point-node-id=8150%3A186621)
+* [Reply UI on audio message](https://www.figma.com/file/MtAO3a7HnEH5xjCDVNilS7/%F0%9F%8E%A8-Design-System-%E2%8E%9C-Desktop?node-id=2271%3A143317)
 
 ## Use cases
 
@@ -113,6 +118,18 @@ User types a message and afterwards can select part of his message and apply sty
 - When text is selected with the keyboard, key combinations MUST apply that style and change the selected text to reflect the markdown that applies that style
     - CTRL+B (windows/linux) CMD+B (mac) - bold
     - CTRL+I (windows/linux) CMD+I (mac) - italic
+    - CTRL+Shift+X (windows/linux) CMD+Shift+I (mac) - Strikethough
+    - CTRL+Shift+C (windows/linux) CMD+Shift+C (mac) - Code Block
+- Removing special characters that define a style MUST dimiss that style, for e.g `**bold**` should display as bold but `*bold**` should not
+- It MUST be possible to combine styles
+
+### Audio Message
+
+TODO
+
+### Reply Message
+
+TODO
 
 ### General
 
