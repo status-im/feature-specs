@@ -78,6 +78,7 @@ A contact request item MUST BE EITHER one initiated by the user OR one received 
 * If the user is mentioned the message containing the message MUST appear in the "All" and "Mentions" sections.
 * The user MUST be able to mark this type of item as read
 * Clicking the context menu of this type of activity item MUST show 2 options: "view profile" and "Decline and Block"
+* Clicking on this type of activity item MUST open that chat and jump to that message
 
 ### Replies
 
