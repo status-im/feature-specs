@@ -24,6 +24,7 @@ To prevent unsolicited messages & invitations and some forms of spam, Users must
 * [Sending contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=725%3A329626)
 * [Receiving contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=1637%3A369041)
 * [Pending contact request](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=128%3A28247)
+* [notifications](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=2090%3A252386)
 
 ## Use Cases
 
@@ -33,6 +34,7 @@ To prevent unsolicited messages & invitations and some forms of spam, Users must
 2. User fills reason for contact request e.g "Say who you are / why you want to become a contact.."
 3. User sends contact request
 4. System notifies user `Contact Request Send`
+4.1 alternative: System notifies user `Contact Request Rejected`
 5. System opens A 1 on 1 chat with that user, it displays that a contact request to that user is pending. The user cannot send messages on the 1 on 1 while the request is pending.
 
 ### Receiving Contact Request
@@ -54,11 +56,15 @@ User A wants to chat with User B and so adds User B as a contact, User B receive
 - The message for the contact request MUST NOT exceeed 280 characters
 - If User A has sent a contact request they MUST see that the contact request is pending and the message they have sent
 - If User A has sent a contact request they MUST be able to cancel the contact request
+- if User A has sent a contact request and it was rejected then the user MUST not be able to send another contact request
 
 ### User B that receives contact request
 - A User CANNOT receive messages from users that are not in their contact list
 - A User MAY receive contact requests from users that are not in their contact list
 - A User CANNOT receive contact requests from users that are already in their contact list
+- A User CANNOT receive contact requests from users that were already rejected
+- A User MUST be able to see a list of contact requests previously rejected
+- A User MAY accept a contact request that was previously rejected
 - If a User has pending contact requests the contact requests section MUST be displayed
 - If a User has no pending contact requests the contact requests section MUST NOT be displayed
 - If a User receives a contact request the counter of message requests MUST increase
@@ -74,6 +80,7 @@ User A wants to chat with User B and so adds User B as a contact, User B receive
 - If a contact request item is rejected it MUST disapear from the UI
 - If a contact request item is accepted it MUST disapear from the UI
 - Clicking on this type of activity item MUST open that chat and jump to that message
+- Contact Requests MUST appear in the activity center and in the contact area of the settings
 
 ## Notes
 
