@@ -38,16 +38,18 @@ TODO
     * reply to a message from the user
     * identity check request
     * community invitation
-* Clicking the "Mark all as read" MUST mark all activity items read of the selected category
+* The Activity Center must have two general options: "Mark all as read" and "Show/hide Notifications that have been read"
+* The "Show/hide Notifications that have been read" MUST by default be in the state "Show notifications that have been read"
+* Clicking the "Mark all as read" MUST mark mentions and replies items as read in the selected category
+* Clicking the "Mark all as read" MUST NOT mark contact requests and identity checks items as read in the selected category
+* Clicking "Show notifications that have been read" MUST show all activity items in the selected category
+* Clicking "Hide notifications that have been read" MUST hide activity items in the selected category that have been previously marked as read
 * The activity items MUST be grouped by day sections and sorted by most recent
 * The day sections and their items MUST displayed according to the following criteria
     * The section with items from today MUST be displayed as "Today"
     * The section with items from yesterday MUST be displayed as "Yesterday"
     * The section with items from this year MUST be displayed in the format "Weekday, Day Month" section example: "Mon, 21 April"
     * The section with items from previous years MUST be displayed in the format "Day Month Year" section example: "Mon, 21 April 2020"
-* Clicking the context menu MUST display the following options:
-    * "Show read notifications", if selected before it MUST toogle to "Hide read notifications"
-    * "Notification settings", if Click it MUST open the notifications settings in profile section
 * The Activity Center MUST display a badge with the total number of currently unread activity items
 * If activity items are are marked as read, the activity center badge MUST be updated accordingly
 
@@ -67,11 +69,15 @@ A contact request item MUST BE EITHER one initiated by the user OR one received 
 * The user MAY accept or reject a contact request in the activity center
 * The user MUST be able to accept a contact request directly in this type of activity item
 * The user MUST be able to decline & block a contact request directly in this type of activity item
-* Clicking the context menu of this type of activity item MUST show 2 options: "view profile" and "Decline and Block"
+* Clicking the context menu of this type of activity item MUST show 3 options: "view profile" and "rename" and "Decline and Block"
+* Clicking "View profile" MUST open the profile modal for that user
+* Clicking "Rename" MUST open the profile modal for that user in that rename user section
+* Clicking "Decline and Block" MUST Reject the contact request
+* Clicking "Decline and Block" MUST Block that contact
 * If a contact request item is rejected it MUST display "Declined"
 * If a contact request item is rejected and blocked it MUST display "Declined & Blocked"
 * If a contact request item is accepted it MUST display "Accepted"
-* Clicking on this type of activity item MUST open that chat and jump to that message
+* Clicking on this type of activity item MUST NOT do anything
 
 ### Mentions
 
