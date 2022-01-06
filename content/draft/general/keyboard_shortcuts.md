@@ -1,7 +1,7 @@
 ---
 title: "Keyboard shortcuts spec"
 description: ""
-version: "1.0"
+version: "2.0"
 date: 2020-12-01T08:48:57+00:00
 lastmod: 2020-12-01T08:48:57+00:00
 draft: false
