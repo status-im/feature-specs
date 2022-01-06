@@ -1,6 +1,7 @@
 ---
 title: "Keyboard shortcuts spec"
 description: ""
+version: "1.0"
 date: 2020-12-01T08:48:57+00:00
 lastmod: 2020-12-01T08:48:57+00:00
 draft: false
@@ -20,7 +21,8 @@ Users often use keyboard shortcuts to more effectively navigate applications. Th
 
 ## Designs
 
-* [designs](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=355%3A82493)
+* [shortcut list modal](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop?node-id=2457%3A357870)
+* [focused state](https://www.figma.com/file/IPpvkpDWabBKJTeo6bFop0/Kuba%E2%8E%9CDesktop)
 
 ## Functional Requirements
 
@@ -49,11 +51,11 @@ The requirements will use the keys `CMD` and `OPT` which are defined for each pl
 - `TAB` - MUST trigger focus of the last message
 - `UP` - MUST focus on the previous message
     - requirement: there is already a message in focus
-- `DOWN` - MUST focus on the previous message
+- `DOWN` - MUST focus on the next message
     - requirement: there is already a message in focus
 - `ESCAPE`:
     - if a message is already in focus, it MUST be removed from focus and the input box MUST be focused instead
-    - if input box is already in focus then focus MUST BE removed completly
+    - if input box is already in focus then focus MUST BE removed completely
     - if there is nothing in focus then the input box MUST be focused
 
 #### Message selection shortcuts
