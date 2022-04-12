@@ -46,14 +46,14 @@ It's quite important the user chooses a strong password since the entire databas
 4.2 System checks if password is a common password (see Functional Requirements#password validation) and displays feedback (e.g "this pasword has been pwned and shouldn't be used")
 5. User types password again in the confirm password field
 6. System checks if password matches and displays "Passwords don't match" if they don't
-7. System checks if password matches and enables the "Create" button if they do
-8. User clicks "Create" button
+7. System checks if password matches and enables the "Change Password" button if they do
+8. User clicks "Change Password" button
 7. System checks if current password is valid and displays "Current password is invalid" if it isn't
 
 ## Functional Requirements
 
 ### Password criteria
-- A password MUST BE at least 6 characters long.
+- A password MUST BE at least 10 characters long.
 - A password MUST BE at most 64 characters long.
 - A password MUST NOT contain spaces.
 - A password MAY CONTAIN any printable ascii character.
@@ -62,7 +62,7 @@ It's quite important the user chooses a strong password since the entire databas
 
 - A password MUST be checked against a list of common passwords
     - If a password matches a common password, it MUST BE rejected
-    - If a password matches a common password, it MUST BE display a warning "this pasword has been pwned and shouldn't be used"
+    - If a password matches a common password, it MUST BE displayed a warning "this pasword has been pwned and shouldn't be used"
     - If the application is online, the password MAY BE checked against an online or a local database.
     - If the application is offline, the password MAY BE checked against a local database.
 
@@ -73,12 +73,12 @@ It's quite important the user chooses a strong password since the entire databas
   - So-So
   - Good
   - Great
-- **TODO**: criteria for each category
+- It MUST BE used `Dropbox's zxcvbn` algorithm to estimate password strength. The result of the API call will provide a number from 0 to 5 that will be directly linked with each category being 0 => Very Weak and  5 => Great category.
 
 ### Misc functionality
 
 - It MUST BE possible to paste a password from the clipboard.
-- it MUST be possible to view the password in the password field.
+- It MUST be possible to view the password in the password field.
 - Everytime a password is created or changed, it MUST BE confirmed in a second password field.
 - If the password is being changed, the current password MUST BE confirmed.
 
