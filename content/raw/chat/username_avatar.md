@@ -58,7 +58,7 @@ Prerequisites: User is in onboarding process or has already set up a profile and
 
 ## Functional Requirements
 
-**Profile Emblems:**
+**Profile Emblems**
 
 - If a profile is a mutual contact then it MUST display a mutual contact emblem (e.g a profile icon)
 - If a profile is a verified identity then it MUST display a verified emblem (e.g a tick icon)
@@ -70,7 +70,7 @@ Prerequisites: User is in onboarding process or has already set up a profile and
 
 - Users MUST be able to set a display name for their own profile
 - Display names MUST be at least 5 characters long
-- Display names MUST be composed of alphanumeric characters, underscores, spaces and/or hyphens, but they cannot contain spaces at the beggining or end 
+- Display names MUST be composed of alphanumeric characters, underscores, spaces and/or hyphens, but they cannot contain spaces at the beggining or end
 - Display names MUST NOT be longer than 24 characters
 - Display names MUST NOT be "3 word names"
 - Display names MUST NOT end in "_eth" or ".eth" or "-eth"
@@ -91,15 +91,16 @@ Prerequisites: User is in onboarding process or has already set up a profile and
 - Users MUST be able to set a profile photo for their profile
 - Profile photos MUST be visible to all users
 
-- A identicon ring MUST be composed of 10 color segments
+- Unless a profile has a registered ENS username, it MUST show the identicon ring around the profile avatar
+- A identicon ring MUST be composed of no more than 11 color segments
 - A identicon ring segment MAY be one of 32 distinctive colors
-- A identicon ring segment MAY be of different length
-- A identicon ring segments total length MUST BE exactly 25px
-- unless a profile is a mutual contact, it MUST show the identicon ring around the profile avatar
+- A identicon ring segment MAY be of different lengths and MUST be composed of 1 to 5 units (unit represents physical entity with color assigned, e.g. pixel)
+- A identicon ring MAY contain non-consecutive same color segments
 
 **EmojiHash**
 
-- An Emoji Hash MUST be a sequence of 14 emojis determined by the profile's chat key. See [2/ACCOUNT spec])https://github.com/status-im/specs/blob/17ab4b313c55bc7c4ad672e0d06c6cb02fba00a7/docs/spec/2-account.md#emoji-hash) for details.
+- An Emoji Hash MUST be a sequence of 14 emojis determined by the profile's chat key. See [2/ACCOUNT spec](https://github.com/status-im/specs/blob/17ab4b313c55bc7c4ad672e0d06c6cb02fba00a7/docs/spec/2-account.md#emoji-hash) for details
+- An Emoji Hash MUST be composed of [immutable emoji set](https://github.com/status-im/status-go/blob/develop/static/emojis.txt)
 - A profile detailed view MUST show that profiles emoji hash
 
 **Profile actions**
